@@ -2,19 +2,21 @@ import {defineConfig} from 'vite';
 import {resolve} from 'path';
 import vitePluginCSSInjectedByJS from 'vite-plugin-css-injected-by-js';
 
+const filename = 'langchat_web_sdk'
+
 export default defineConfig({
     build: {
         lib: {
             entry: resolve(__dirname, 'src/main.ts'),
-            name: 'langchat_web_sdk',
-            fileName: 'langchat_web_sdk.min',
+            name: filename,
+            fileName: filename,
             formats: ['iife']
         },
         rollupOptions: {
             output: {
                 inlineDynamicImports: true,  // 确保动态导入。
                 assetFileNames: 'assets/[name].[ext]',
-                entryFileNames: '[name].js'
+                entryFileNames: `${filename}.min.js`
             },
             // @ts-ignore
             manualChunks: undefined  // 防止代码拆分，确保只有一个打包文件。
