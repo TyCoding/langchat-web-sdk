@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LangChat</title>
+      <link href="../../dist/standalone/style.css" rel="stylesheet">
+  </head>
+  <body>
+  <script src="../../dist/standalone/index.js"></script>
+  <script>
+      window.onload = function() {
+          new LangChatBot({
+              apiUrl: 'https://api.example.com/chat',
+              token: 'your-token',
+              layout: 'widget',
+              position: 'bottom-right',
+              theme: {
+                  primary: '#3B82F6',
+                  secondary: '#1D4ED8'
+              }
+          });
+      }
+  </script>
+  </body>
+</html>
